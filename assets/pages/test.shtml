@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="../styles/css/index.css">
+
+</head>
+<body>
+$END$
+<link rel="stylesheet" type="text/css" href="../styles/css/global.css">
+<script src="../js/vendor/require.js"></script>
+<script src="../cdn/main.js"></script>
+
+<!--cdn样例-->
+<script src="../cdn/jquery.js"></script>
+
+</body>
+</html>

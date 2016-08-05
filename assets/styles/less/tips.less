@@ -1,0 +1,23 @@
+/*!===============
+ * 文件编码：utf-8
+ * 开发版本：v1.0     2015.03.30  wenyang.zhou
+ * 文件说明：提示
+==================*/
+@import "_variables.less";                    // 基础变量
+@import "_mixins.less";                       // 混合类
+/*==============提示==============*/
+.tips-box{
+	background-color: #fff;
+	padding: 10%;
+	border: solid 1px @border-main;
+	position: relative;
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		.bg('ico-tips.png');
+		background-size: 52px;
+		.size(52px,52px);
+	}
+}

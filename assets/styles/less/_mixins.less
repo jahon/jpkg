@@ -1,0 +1,136 @@
+
+.transition(@el){
+    transition: @el .2s ease-in-out;
+}
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000,@set:outset){ 
+    -moz-box-shadow: @arguments; 
+    -webkit-box-shadow: @arguments; 
+    box-shadow: @arguments; 
+ }
+ .border-radius(@bdcolor){
+    -moz-border-radius: @bdcolor;
+    -webkit-border-radius: @bdcolor;
+    border-radius: @bdcolor;
+}
+.font-yahei(){
+    font-family: "Microsoft YaHei";
+}
+.font-song(){
+    font-family: "SimSun";
+}
+.font-en(){
+    font-family:tahoma,simsun,sans-serif;
+}
+.size(@width: 100%, @height: 100%) {
+    width: @width;
+    height: @height;
+}
+.square(@size) {
+    .size(@size, @size);
+}
+.line-height(@height) {
+    min-height: @height;
+    line-height: @height;
+}
+
+.box-center(@margin:auto) {
+    margin-left:@margin;
+    margin-right:@margin;
+}
+.opacity(@opacity:50) {
+    opacity: @opacity / 100;
+}
+.background(@pic,@repeat:no-repeat,@x:0,@y:0,@path:"") {
+    background: url("@{images}@{path}@{pic}") @repeat @x @y;
+}
+.bg(@pic,@path:"") {
+    background: url("@{images}@{path}@{pic}") no-repeat;
+}
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    //word-break: keep-all;
+}
+.overflow(@hidden:hidden){
+    overflow: @hidden;
+}
+.v-middle(){
+    display: inline-block;
+    vertical-align: middle;
+}
+.input(@bdcolor:#dcdcdc){
+    border: solid 1px @bdcolor;
+    background-color: @color-white;
+    padding: 0 10px;
+}
+.base-box(){
+    background-color: #fff;
+    border: 1px solid @border-main;
+}
+
+// ====== 背景半透明，内容正常 ======//
+.bg-opacity(@r:0,@g:0,@b:0,@a:.5,@aa:55,@startColor:"000000",@endColor:"000000"){
+    background-color:rgba(@r,@g,@b,@a);
+}
+
+// ====== 图片带标题及内容(上下) ====== //
+.list-img(@width:100%,@height:100%,@img-width:100%,@img-height:100%,@color:#666,@padding:0,@title-size:12px,@title-height:1.5em,@title-color:#333){
+    .size(@width,@height);
+    padding: @padding;
+    .imgbox{
+        .size(@img-width,@img-height);
+    }
+    .t-name{
+        font-size: @title-size;
+        line-height: @title-height;
+        color: @title-color;
+    }
+    .li-txt{
+        color: @color;
+    }
+}
+// ====== 图片带标题及内容(左右，图片在左) ====== //
+.list-imgtxt(@width:100%,@height:100%,@img-width:100%,@img-height:100%,@color:#666,@padding:0,@offset:0,@title-size:12px,@title-height:1.5em,@title-color:#333){
+    .size(@width,@height);
+    padding: @padding;
+    .imgbox{
+        .size(@img-width,@img-height);
+        float: left;
+        margin-left: -@offset;
+    }
+    .t-name{
+        font-size: @title-size;
+        line-height: @title-height;
+        color: @title-color;
+    }
+    .li-txt{
+        color: @color;
+    }
+}
+
+// ====== 单行文本列表====== //
+// * width：宽
+// * height：高
+// * line-height：行高
+// * font-size：字体大小 
+// * offset:偏移值
+// * tail-float:（left：靠左跟随，right：尾部右侧对齐）
+// ======================= //
+.list-txt(@width:auto,@height:auto,@line-height:auto,@font-size:12px,@offset:0,@tail-float:none){
+    .size(@width,@height);
+    line-height: @line-height;
+    padding-right: @offset+0.5em;
+    .t-name{
+        float: left;
+        font-size: @font-size;
+        .text-overflow;
+        max-width: 100%;
+    }
+    .tag-tail{
+         float: @tail-float;
+         margin-right: -(@offset+0.5em);
+         display: inline;
+         padding-left: 0.5em;
+    }
+}

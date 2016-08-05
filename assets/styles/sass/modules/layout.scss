@@ -1,0 +1,85 @@
+﻿@charset "utf-8";
+@import '../variables';
+@import '../mixins';
+
+.l-body {
+  @include size($max-width, initial);
+}
+
+div[data-role="page"] {
+  position: relative;
+
+  @include size(100%, 100%);
+  //@include center-block;
+  margin: 0 auto 60px;
+
+  min-width: 320px;
+  max-width: $max-width;
+  background-color: $background-color;
+  //border: 1px solid red;
+
+}
+
+header {
+  @include line-height(100%, 88px*$scale);
+  position: relative;
+  z-index: 999;
+  font-size: $font-size-h1*$scale;
+  color: $white;
+  letter-spacing: 1px;
+  background-color: $header-color;
+
+}
+
+footer {
+  height: 100%;
+
+}
+
+textarea.tempdata {
+  display: none !important;
+}
+
+.line {
+  @include size(96%, 1px);
+  @include center-block;
+  background-color: $ccc;
+}
+
+.line-green-blue {
+  @include size(100%, 1px);
+  background-color: #84CCC9;
+}
+
+.bg {
+  background-color: $dark-blue !important;
+}
+
+.half {
+  @include size(49%, 100%);
+
+  //border: 1px solid green;
+}
+
+.flex3 {
+  @include size(33%, 100%);
+
+  //border: 1px solid green;
+}
+
+.gray {
+  color: #898989 !important;
+}
+/*=============弹出层=================*/
+.l-overlay {
+    /*display: none;*/
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
